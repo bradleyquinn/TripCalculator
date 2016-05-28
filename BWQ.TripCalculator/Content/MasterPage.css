@@ -1,23 +1,39 @@
 ﻿.Header {
     background-color: #7D8B8C;
     width: auto;
-    height: 150px;
+    height: 130px;
+    border: solid;
+    border-color: black;
 }
 
 .Footer {
     background-color: #7D8B8C;
     width: 100%;
-    height: 150px;
+    height: 130px;
     position: fixed;
     bottom: 0;
+    border: solid;
+    border-color: black;
 }
 
-.wtxt {
+.fntwht {
     color: white;
 }
 
 .fnt {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.fntblk {
+    color: black;
+}
+
+.fnt18 {
+    font-size: 18px;
+}
+
+.fnt16 {
+    font-size: 16px;
 }
 
 .pd10 {
@@ -28,6 +44,10 @@
     padding-left: 15px;
 }
 
+.pdl10 {
+    padding-left: 10px;
+}
+
 .pdr15 {
     padding-right: 15px;
 }
@@ -36,8 +56,12 @@
     padding-right: 30px;
 }
 
-.pdt30 {
-    padding-top: 30px;
+.pdt20 {
+    padding-top: 20px;
+}
+
+.pdt6 {
+    padding-top: 6px;
 }
 
 .fntItal {

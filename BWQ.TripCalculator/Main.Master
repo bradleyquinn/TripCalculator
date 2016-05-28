@@ -15,7 +15,7 @@
         <div id="topNav">
             <asp:Panel runat="server" ID="pnlTopNav" CssClass="Header">
                 <div class="pull-right">
-                    <asp:Image runat="server" ID="QP20" ImageUrl="~/images/Qp2.0_Trans.png" CssClass="pdr30 pdt30"/>
+                    <asp:Image runat="server" ID="QP20" ImageUrl="~/images/Qp2.0_Trans.png" CssClass="pdr30 pdt20" />
                 </div>
             </asp:Panel>
         </div>
@@ -27,13 +27,12 @@
 
         <div id="botNav">
             <asp:Panel runat="server" ID="pnlBotNav" CssClass="Footer">
-                <div class="pull-left wtxt fnt pd10 pdl15">
-                    <asp:Label runat="server" ID="lblContact" CssClass="fntItal h3" Text="Contact Info:" /><br />
-                    <asp:Label runat="server" ID="lblName" CssClass="h4" Text="Bradley Quinn" /><br />
-                    <asp:Label runat="server" ID="lblPhone" CssClass="h5" Text="(808) 366-8120" /><br />
-                    <asp:HyperLink runat="server" ID="hlEmail" Text="EMail" NavigateUrl="mailto:bradleyquinn@live.com" /><br />
-                    <asp:HyperLink runat="server" ID="hlLinkedIn" Text="LinkedIn" NavigateUrl="https://www.linkedin.com/in/bradleyquinn" Target="_blank" /><br />
-                    <asp:HyperLink runat="server" ID="hlCarbon" Text="CarbonMade" NavigateUrl="https://bradleywquinn.carbonmade.com/" Target="_blank" />
+                <div class="pull-left fntwht fnt pdt6 pdl10">
+                    <asp:Label runat="server" ID="lblName" CssClass="fntItal fnt18" Text="Bradley Quinn" /><br />
+                    <asp:Label runat="server" ID="lblPhone" CssClass="fnt16" Text="(808) 366-8120" /><br />
+                    <asp:HyperLink runat="server" ID="hlEmail" CssClass="fntblk fnt16" Text="EMail" NavigateUrl="mailto:bradleyquinn@live.com" /><br />
+                    <asp:HyperLink runat="server" ID="hlLinkedIn" CssClass="fntblk fnt16" Text="LinkedIn" NavigateUrl="https://www.linkedin.com/in/bradleyquinn" Target="_blank" /><br />
+                    <asp:HyperLink runat="server" ID="hlCarbon" CssClass="fntblk fnt16" Text="CarbonMade" NavigateUrl="https://bradleywquinn.carbonmade.com/" Target="_blank" />
                 </div>
             </asp:Panel>
         </div>
