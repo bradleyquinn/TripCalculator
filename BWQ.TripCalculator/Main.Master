@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="BWQ.TripCalculator.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%= System.Web.Optimization.Scripts.Render("~/bundles/Scripts") %>
+    <%= System.Web.Optimization.Styles.Render("~/bundles/Styles") %>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="topNav">
+            <span class="title">MasterPageHeader</span>
+        </div>
+
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="botNav">
+            <span class="title">MasterPageFooter</span>
+        </div>
+    </form>
+</body>
+</html>
