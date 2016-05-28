@@ -17,7 +17,9 @@ namespace BWQ.TripCalculator.App_Start
                 ));
 
             bundles.Add(new StyleBundle("~/bundles/Styles").Include(
-                "~/Content/bootstrap*"
+                "~/Content/bootstrap*",
+                "~/Content/MasterPage.css",
+                "~/Content/Body.css"
                 ));
 
             BundleTable.EnableOptimizations = true;

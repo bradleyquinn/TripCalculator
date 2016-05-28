@@ -1,0 +1,17 @@
+﻿.SplashExpense {
+    background-image: url("../images/BackSplashExpense.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.SplashPayout {
+    background-image: url("../images/BackSplashPayout.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}

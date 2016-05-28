@@ -13,7 +13,11 @@
 <body>
     <form id="form1" runat="server">
         <div id="topNav">
-            <span class="title">MasterPageHeader</span>
+            <asp:Panel runat="server" ID="pnlTopNav" CssClass="Header">
+                <div class="pull-right">
+                    <asp:Image runat="server" ID="QP20" ImageUrl="~/images/Qp2.0_Trans.png" CssClass="pdr30 pdt30"/>
+                </div>
+            </asp:Panel>
         </div>
 
         <div id="content">
@@ -22,7 +26,16 @@
         </div>
 
         <div id="botNav">
-            <span class="title">MasterPageFooter</span>
+            <asp:Panel runat="server" ID="pnlBotNav" CssClass="Footer">
+                <div class="pull-left wtxt fnt pd10 pdl15">
+                    <asp:Label runat="server" ID="lblContact" CssClass="fntItal h3" Text="Contact Info:" /><br />
+                    <asp:Label runat="server" ID="lblName" CssClass="h4" Text="Bradley Quinn" /><br />
+                    <asp:Label runat="server" ID="lblPhone" CssClass="h5" Text="(808) 366-8120" /><br />
+                    <asp:HyperLink runat="server" ID="hlEmail" Text="EMail" NavigateUrl="mailto:bradleyquinn@live.com" /><br />
+                    <asp:HyperLink runat="server" ID="hlLinkedIn" Text="LinkedIn" NavigateUrl="https://www.linkedin.com/in/bradleyquinn" Target="_blank" /><br />
+                    <asp:HyperLink runat="server" ID="hlCarbon" Text="CarbonMade" NavigateUrl="https://bradleywquinn.carbonmade.com/" Target="_blank" />
+                </div>
+            </asp:Panel>
         </div>
     </form>
 </body>

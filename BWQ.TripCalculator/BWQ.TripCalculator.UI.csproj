@@ -120,6 +120,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Body.css" />
+    <Content Include="Content\MasterPage.css" />
+    <Content Include="images\BackSplashExpense.jpg" />
+    <Content Include="images\BackSplashPayout.jpg" />
+    <Content Include="images\Qp2.0_Trans.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -189,7 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
