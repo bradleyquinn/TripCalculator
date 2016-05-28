@@ -36,6 +36,10 @@
     font-size: 16px;
 }
 
+.fnt15 {
+    font-size: 15px;
+}
+
 .pd10 {
     padding: 10px;
 }
@@ -60,8 +64,8 @@
     padding-top: 20px;
 }
 
-.pdt6 {
-    padding-top: 6px;
+.pdt7 {
+    padding-top: 7px;
 }
 
 .fntItal {

@@ -1,6 +1,8 @@
 # Bradley Quinn - TripCalculator
 iTrellis Interview Project
 
+Domain: Trip Calculator - Interface: Web Server UI
+
 This project leverages NuGet and should pull the needed packages in automatically. 
 
 Simply clone this repository, or open the provided .Zip file, and run BWQ.TripCalculator.sln
