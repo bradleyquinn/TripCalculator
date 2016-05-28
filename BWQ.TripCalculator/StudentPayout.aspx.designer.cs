@@ -13,13 +13,22 @@ namespace BWQ.TripCalculator {
     public partial class StudentPayout {
         
         /// <summary>
-        /// pnlMain control.
+        /// pnlSplash control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlMain;
+        protected global::System.Web.UI.WebControls.Panel pnlSplash;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// DummyTag control.

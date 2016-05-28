@@ -13,10 +13,9 @@
 <body>
     <form id="form1" runat="server">
         <div id="topNav">
-            <asp:Panel runat="server" ID="pnlTopNav" CssClass="Header">
-                <div class="pull-right">
-                    <asp:Image runat="server" ID="QP20" ImageUrl="~/images/Qp2.0_Trans.png" CssClass="pdr30 pdt20" />
-                </div>
+            <asp:Panel runat="server" ID="pnlTopNav" CssClass="header">
+                <asp:Label runat="server" ID="lblLogo" Text="Trip Calculator" CssClass="pull-left fntblk fntfancy pdl25 pdt30 fnt50" />
+                <asp:Image runat="server" ID="imgQP20" ImageUrl="~/images/Qp2.0_Trans.png" CssClass="pdr30 pdt20 pull-right" />
             </asp:Panel>
         </div>
 
@@ -26,7 +25,7 @@
         </div>
 
         <div id="botNav">
-            <asp:Panel runat="server" ID="pnlBotNav" CssClass="Footer">
+            <asp:Panel runat="server" ID="pnlBotNav" CssClass="footer">
                 <div class="pull-left fntwht fnt pdt7 pdl10">
                     <asp:Label runat="server" ID="lblName" CssClass="fntItal fnt18" Text="Bradley Quinn" /><br />
                     <asp:Label runat="server" ID="lblPhone" CssClass="fnt16" Text="(808) 366-8120" /><br />

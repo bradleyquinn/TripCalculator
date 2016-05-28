@@ -1,4 +1,4 @@
-﻿.SplashExpense {
+﻿.splashExpense {
     background-image: url("../images/BackSplashExpense.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,11 +7,38 @@
     position: fixed;
 }
 
-.SplashPayout {
+.splashPayout {
     background-image: url("../images/BackSplashPayout.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
     position: fixed;
+}
+
+.pnlwht {
+    background-color: white;
+}
+
+.pnlmain {
+    width: 40%;
+    height: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9%;
+    border: solid;
+    border-color: black;
+    text-align: center;
+}
+
+.pnlinfo {
+    margin-top: 12%;
+}
+
+.mg5 {
+    margin: 5px;
+}
+
+.mgt20 {
+    margin-top: 20px;
 }
