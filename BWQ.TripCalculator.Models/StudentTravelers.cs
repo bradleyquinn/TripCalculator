@@ -14,4 +14,10 @@ namespace BWQ.TripCalculator.Models
         public double Lodging { get; set; }
         public double Activites { get; set; }
     }
+
+    public class TravelerTotals
+    {
+        public string Name { get; set; }
+        public double Total { get; set; }
+    }
 }

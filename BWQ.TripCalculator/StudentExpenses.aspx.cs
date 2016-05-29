@@ -125,7 +125,7 @@ namespace BWQ.TripCalculator
             {
                 if (regexNamePass && regexNumericPass)
                 {
-                    lblSuccess.Text = string.Format("Congratulations, traveler {0} successfully added.", tbxName.Text);
+                    lblSuccess.Text = string.Format("Traveler {0} successfully added. <b>{1}</b> total travelers.", tbxName.Text, numUses);
                     lblSuccess.Visible = true;
                     StudentTraveler _mainObj = FillMainObject();
                     CreateSession(_mainObj, numUses);
@@ -166,6 +166,8 @@ namespace BWQ.TripCalculator
             {
                 if (regexNamePass && regexNumericPass)
                 {
+                    StudentTraveler _mainObj = FillMainObject();
+                    CreateSession(_mainObj, numUses);
                     Response.Redirect("~/StudentPayout.aspx");
                 }
                 else
