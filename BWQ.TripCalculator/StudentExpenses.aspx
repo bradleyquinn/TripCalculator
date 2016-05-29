@@ -21,7 +21,7 @@
                 <asp:TextBox runat="server" ID="tbxLodging" CssClass="mg5" /><br />
                 <asp:Label runat="server" ID="lblActivities" CssClass="mg5" Style="margin-left: 7px;" Text="<b>Activites and Misc cost:</b>" />
                 <asp:TextBox runat="server" ID="tbxActivities" CssClass="mg5" /><br />
-                <asp:Button runat="server" ID="btnAnother" CssClass="btn btn-success mg5 mgt20" Text="Add another student" OnClick="btnAnother_Click" />
+                <asp:Button runat="server" ID="btnAnother" CssClass="btn btn-success mg5 mgt20" Text="Add another traveler" OnClick="btnAnother_Click" />
                 <asp:Button runat="server" ID="btnDone" CssClass="btn btn-danger mg5 mgt20" Text="Done" OnClick="btnDone_Click" />
             </asp:Panel>
         </asp:Panel>

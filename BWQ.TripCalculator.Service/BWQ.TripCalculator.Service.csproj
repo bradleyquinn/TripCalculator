@@ -114,6 +114,12 @@
     <Compile Include="CalculationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWQ.TripCalculator.Models\BWQ.TripCalculator.Models.csproj">
+      <Project>{fcc24aad-cca5-4170-8235-db0a9194bdb2}</Project>
+      <Name>BWQ.TripCalculator.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

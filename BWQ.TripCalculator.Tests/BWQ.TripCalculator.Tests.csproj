@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BWQ.TripCalculator.Service">
-      <HintPath>..\BWQ.TripCalculator.Service\bin\BWQ.TripCalculator.Service.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
     <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -75,14 +72,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BWQ.TripCalculator\BWQ.TripCalculator.UI.csproj">
-      <Project>{0CF46E57-6673-43DB-B043-69E175383EA4}</Project>
-      <Name>BWQ.TripCalculator.UI</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWQ.TripCalculator.Service\BWQ.TripCalculator.Service.csproj">
+      <Project>{2b20d439-a295-48e5-9380-fb67de71ee62}</Project>
+      <Name>BWQ.TripCalculator.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

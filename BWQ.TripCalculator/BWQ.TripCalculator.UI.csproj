@@ -47,12 +47,6 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="BWQ.TripCalculator.Models">
-      <HintPath>..\BWQ.TripCalculator.Models\bin\BWQ.TripCalculator.Models.dll</HintPath>
-    </Reference>
-    <Reference Include="BWQ.TripCalculator.Service">
-      <HintPath>..\BWQ.TripCalculator.Service\bin\BWQ.TripCalculator.Service.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -197,6 +191,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWQ.TripCalculator.Models\BWQ.TripCalculator.Models.csproj">
+      <Project>{fcc24aad-cca5-4170-8235-db0a9194bdb2}</Project>
+      <Name>BWQ.TripCalculator.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWQ.TripCalculator.Service\BWQ.TripCalculator.Service.csproj">
+      <Project>{2b20d439-a295-48e5-9380-fb67de71ee62}</Project>
+      <Name>BWQ.TripCalculator.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

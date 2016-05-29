@@ -13,7 +13,7 @@ namespace BWQ.TripCalculator
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            StudentTravelers traveler = new StudentTravelers();
+            StudentTraveler traveler = new StudentTraveler();
 
         }
     }

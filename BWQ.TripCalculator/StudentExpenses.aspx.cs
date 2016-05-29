@@ -5,20 +5,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using BWQ.TripCalculator.Service;
 using BWQ.TripCalculator.Models;
 
 namespace BWQ.TripCalculator
 {
     public partial class StudentExpenses : System.Web.UI.Page
     {
+        int numUses = 1;
         Regex nameValidation = new Regex(@"[A-Za-z. ]+$");
         Regex numericValidation = new Regex(@"[0-9. ]+$");
+        HttpCookie travelerCookie = new HttpCookie("travelerCookie");
+        StudentTraveler currentTraveler = new StudentTraveler();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            StudentTravelers traveler = new StudentTravelers();
-
             ResetErrorMessaging();
         }
 
@@ -32,6 +33,15 @@ namespace BWQ.TripCalculator
 
             if (lblNumericError.Visible)
                 lblNumericError.Visible = false;
+        }
+
+        private void ClearForm()
+        {
+            tbxName.Text = 
+                tbxFuel.Text = 
+                tbxFood.Text = 
+                tbxLodging.Text = 
+                tbxActivities.Text = string.Empty;
         }
 
         private bool RegexNameValidation()
@@ -78,6 +88,22 @@ namespace BWQ.TripCalculator
             return false;
         }
 
+        private void CreateCookie(StudentTraveler currentTraveler, int numUses)
+        {
+            PersistData.CreateCookie(travelerCookie, currentTraveler, numUses);
+        }
+
+        private StudentTraveler FillMainObject()
+        {
+            currentTraveler.Name = tbxName.Text;
+            currentTraveler.FuelFlight = Convert.ToDouble(tbxFuel.Text);
+            currentTraveler.FoodDrink = Convert.ToDouble(tbxFood.Text);
+            currentTraveler.Lodging = Convert.ToDouble(tbxLodging.Text);
+            currentTraveler.Activites = Convert.ToDouble(tbxActivities.Text);
+
+            return currentTraveler;
+        }
+
         protected void btnAnother_Click(object sender, EventArgs e)
         {
             bool regexNamePass = RegexNameValidation();
@@ -92,8 +118,12 @@ namespace BWQ.TripCalculator
             {
                 if (regexNamePass && regexNumericPass)
                 {
-                    lblSuccess.Text = string.Format("Congratulations, student {0} successfully added.", tbxName.Text);
+                    lblSuccess.Text = string.Format("Congratulations, traveler {0} successfully added.", tbxName.Text);
                     lblSuccess.Visible = true;
+                    StudentTraveler _mainObj = FillMainObject();
+                    CreateCookie(_mainObj, numUses);
+                    ClearForm();
+                    numUses++;
                 }
                 else
                 {
