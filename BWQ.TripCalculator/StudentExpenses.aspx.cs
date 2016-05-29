@@ -15,7 +15,6 @@ namespace BWQ.TripCalculator
         int numUses;
         Regex nameValidation = new Regex(@"[A-Za-z. ]+$");
         Regex numericValidation = new Regex(@"[0-9. ]+$");
-        HttpCookie travelerCookie = new HttpCookie("travelerCookie");
         StudentTraveler currentTraveler = new StudentTraveler();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -96,9 +95,9 @@ namespace BWQ.TripCalculator
             return false;
         }
 
-        private void CreateCookie(StudentTraveler currentTraveler, int numUses)
+        private void CreateSession(StudentTraveler currentTraveler, int numUses)
         {
-            PersistData.CreateCookie(travelerCookie, currentTraveler, numUses);
+            PersistData.CreateSessionVariables(currentTraveler, numUses);
         }
 
         private StudentTraveler FillMainObject()
@@ -129,7 +128,7 @@ namespace BWQ.TripCalculator
                     lblSuccess.Text = string.Format("Congratulations, traveler {0} successfully added.", tbxName.Text);
                     lblSuccess.Visible = true;
                     StudentTraveler _mainObj = FillMainObject();
-                    CreateCookie(_mainObj, numUses);
+                    CreateSession(_mainObj, numUses);
                     ClearForm();
                     Session.Add("numUses", numUses);
                 }
