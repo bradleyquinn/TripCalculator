@@ -12,7 +12,7 @@ namespace BWQ.TripCalculator
 {
     public partial class StudentExpenses : System.Web.UI.Page
     {
-        int numUses = 1;
+        int numUses;
         Regex nameValidation = new Regex(@"[A-Za-z. ]+$");
         Regex numericValidation = new Regex(@"[0-9. ]+$");
         HttpCookie travelerCookie = new HttpCookie("travelerCookie");
@@ -20,6 +20,14 @@ namespace BWQ.TripCalculator
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["numUses"] == null)
+                numUses = 1;
+            else
+            {
+                numUses = (int)Session["numUses"];
+                numUses++;
+            }
+
             ResetErrorMessaging();
         }
 
@@ -37,10 +45,10 @@ namespace BWQ.TripCalculator
 
         private void ClearForm()
         {
-            tbxName.Text = 
-                tbxFuel.Text = 
-                tbxFood.Text = 
-                tbxLodging.Text = 
+            tbxName.Text =
+                tbxFuel.Text =
+                tbxFood.Text =
+                tbxLodging.Text =
                 tbxActivities.Text = string.Empty;
         }
 
@@ -123,7 +131,7 @@ namespace BWQ.TripCalculator
                     StudentTraveler _mainObj = FillMainObject();
                     CreateCookie(_mainObj, numUses);
                     ClearForm();
-                    numUses++;
+                    Session.Add("numUses", numUses);
                 }
                 else
                 {
