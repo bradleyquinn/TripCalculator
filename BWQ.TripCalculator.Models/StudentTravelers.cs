@@ -21,6 +21,7 @@ namespace BWQ.TripCalculator.Models
         public double Total { get; set; }
         public bool Owes { get; set; }
         public bool IsOwed { get; set; }
+        public double AmountOwes { get; set; }
         public double AmountOwed { get; set; }
     }
 }

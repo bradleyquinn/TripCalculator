@@ -29,12 +29,12 @@ namespace BWQ.TripCalculator
             {
                 if (display.Owes)
                 {
-                    lblOwes.Text += string.Format("{0}: owes {1}.<br />", display.Name, Math.Round(display.AmountOwed, 2));
+                    lblOwes.Text += string.Format("{0}: owes {1} total.<br />", display.Name, Math.Round(display.AmountOwes, 2));
                 }
 
                 if (display.IsOwed)
                 {
-                    lblOwed.Text += string.Format("to {0}.", display.Name);
+                    lblOwed.Text += string.Format("{0}: is owed {1} total.", display.Name, display.AmountOwed);
                 }
             }
         }
