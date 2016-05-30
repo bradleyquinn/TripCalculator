@@ -18,7 +18,25 @@ namespace BWQ.TripCalculator
             List<TravelerTotals> totals = AssignTotals(cleanTravelers);
             List<TravelerTotals> owingTravelers = CalculationService.CalculateTotals(totals);
 
+            CreateDisplay(owingTravelers);
 
+            //TODO: clear session
+        }
+
+        private void CreateDisplay(List<TravelerTotals> owingTravelers)
+        {
+            foreach (var display in owingTravelers)
+            {
+                if (display.Owes)
+                {
+                    lblResults.Text += string.Format("{0} owes {1}<br />", display.Name, Math.Round(display.AmountOwed, 2));
+                }
+
+                if (!display.Owes)
+                {
+                    lblResults.Text += string.Format("to {0}", display.Name);
+                }
+            }
         }
 
         private List<string> RetrieveSession()

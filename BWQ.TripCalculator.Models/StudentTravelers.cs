@@ -20,6 +20,6 @@ namespace BWQ.TripCalculator.Models
         public string Name { get; set; }
         public double Total { get; set; }
         public bool Owes { get; set; }
-        public double AmountOwes { get; set; }
+        public double AmountOwed { get; set; }
     }
 }
