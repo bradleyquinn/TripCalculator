@@ -25,16 +25,26 @@ namespace BWQ.TripCalculator
 
         private void CreateDisplay(List<TravelerTotals> owingTravelers)
         {
-            foreach (var display in owingTravelers)
+            int owedCount = 0;
+
+            foreach (var count in owingTravelers)
             {
+                if (count.IsOwed)
+                    owedCount++;
+            }
+
+            foreach (var display in owingTravelers)
+            {                                             
                 if (display.Owes)
-                {
-                    lblOwes.Text += string.Format("{0}: owes {1} total.<br />", display.Name, Math.Round(display.AmountOwes, 2));
+                {                    
+                    lblOwes.Text += string.Format("{0}: owes {1} total, {2}\n\r", 
+                        display.Name, Math.Round(display.AmountOwes, 2), 
+                        owedCount > 1 ? string.Format("divided amongst {0} travelers.", owedCount) : "to 1 traveler.");
                 }
 
                 if (display.IsOwed)
                 {
-                    lblOwed.Text += string.Format("{0}: is owed {1} total.", display.Name, display.AmountOwed);
+                    lblOwed.Text += string.Format("{0}: is owed {1} total.<br />", display.Name, display.AmountOwed);
                 }
             }
         }
