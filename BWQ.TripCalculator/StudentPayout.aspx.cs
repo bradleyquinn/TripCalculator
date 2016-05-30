@@ -20,7 +20,7 @@ namespace BWQ.TripCalculator
 
             CreateDisplay(owingTravelers);
 
-            //TODO: clear session
+            Session.Abandon();
         }
 
         private void CreateDisplay(List<TravelerTotals> owingTravelers)
@@ -29,12 +29,12 @@ namespace BWQ.TripCalculator
             {
                 if (display.Owes)
                 {
-                    lblResults.Text += string.Format("{0} owes {1}<br />", display.Name, Math.Round(display.AmountOwed, 2));
+                    lblOwes.Text += string.Format("{0}: owes {1}.<br />", display.Name, Math.Round(display.AmountOwed, 2));
                 }
 
-                if (!display.Owes)
+                if (display.IsOwed)
                 {
-                    lblResults.Text += string.Format("to {0}", display.Name);
+                    lblOwed.Text += string.Format("to {0}.", display.Name);
                 }
             }
         }

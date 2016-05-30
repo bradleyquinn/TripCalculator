@@ -31,21 +31,30 @@ namespace BWQ.TripCalculator {
         protected global::System.Web.UI.WebControls.Panel pnlMain;
         
         /// <summary>
-        /// pnlResults control.
+        /// pnlInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlResults;
+        protected global::System.Web.UI.WebControls.Panel pnlInfo;
         
         /// <summary>
-        /// lblResults control.
+        /// lblOwes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResults;
+        protected global::System.Web.UI.WebControls.Label lblOwes;
+        
+        /// <summary>
+        /// lblOwed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOwed;
     }
 }

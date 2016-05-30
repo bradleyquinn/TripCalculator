@@ -37,6 +37,10 @@ namespace BWQ.TripCalculator.Service
                     totals[i].Owes = true;
                     totals[i].AmountOwed = eachOwes - paidOut[i];
                 }
+                else if (paidOut[i] > eachOwes)
+                {
+                    totals[i].IsOwed = true;
+                }
             }
 
             return totals;
