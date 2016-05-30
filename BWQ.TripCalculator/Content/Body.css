@@ -53,12 +53,18 @@
     top: 50px;
 }
 
-.displayowed {
-    position: relative;
-    top: 270px;
+.pnlinfopayout {
+    height: 75%;
+    margin-top: 7%;
 }
 
-.displayowes {
-    position:relative;
-    top:40px;
+.messagingbottom {
+    position: relative;
+    top: 50%;
+}
+
+.messagingcenter {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }

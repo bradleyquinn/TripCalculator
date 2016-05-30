@@ -8,6 +8,7 @@
             <asp:Label runat="server" ID="lblNameError" Text="We're sorry, the name field must contain only letters, spaces or a period." CssClass="alert alert-danger messaging" Visible="false" /><br />
             <asp:Label runat="server" ID="lblNumericError" Text="We're sorry, only numbers and a period are allowed in the cost fields." CssClass="alert alert-danger messaging" Visible="false" />
             <asp:Label runat="server" ID="lblEmptyError" Text="We are sorry, all fields must have a value (use 0 for none)." CssClass="alert alert-danger messaging" Visible="false" />
+            <asp:Label runat="server" ID="lblNumUsesError" Text="We are sorry, you must add 2 or more travelers to continue." CssClass="alert alert-danger messaging" Visible="false" />
             <asp:Label runat="server" ID="lblSuccess" CssClass="alert alert-success messaging" Visible="false" />
 
             <asp:Panel runat="server" ID="pnlInfo" CssClass="pnlinfo">

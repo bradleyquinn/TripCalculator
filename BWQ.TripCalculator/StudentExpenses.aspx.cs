@@ -162,6 +162,10 @@ namespace BWQ.TripCalculator
             {
                 lblEmptyError.Visible = true;
             }
+            else if (numUses < 2)
+            {
+                lblNumUsesError.Visible = true;
+            }
             else
             {
                 if (regexNamePass && regexNumericPass)

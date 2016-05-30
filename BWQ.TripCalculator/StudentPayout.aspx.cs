@@ -37,14 +37,14 @@ namespace BWQ.TripCalculator
             {                                             
                 if (display.Owes)
                 {                    
-                    lblOwes.Text += string.Format("{0}: owes {1} total, {2}\n\r", 
+                    lblOwes.Text += string.Format("{0}: <b>owes</b> {1} total, {2}", 
                         display.Name, Math.Round(display.AmountOwes, 2), 
-                        owedCount > 1 ? string.Format("divided amongst {0} travelers.", owedCount) : "to 1 traveler.");
+                        owedCount > 1 ? string.Format("divided amongst {0} travelers. <br />", owedCount) : "to 1 traveler. <br />");
                 }
 
                 if (display.IsOwed)
                 {
-                    lblOwed.Text += string.Format("{0}: is owed {1} total.<br />", display.Name, display.AmountOwed);
+                    lblOwed.Text += string.Format("{0}: is <b>owed</b> {1} total. <br />", display.Name, display.AmountOwed);
                 }
             }
         }
