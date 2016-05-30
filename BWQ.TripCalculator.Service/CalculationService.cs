@@ -24,24 +24,61 @@ namespace BWQ.TripCalculator.Service
             List<string> names = new List<string>(totals.Count);
             List<double> paidOut = new List<double>(totals.Count);
 
-            for (int i = 0; i < totals.Count; i++)
+            try
             {
-                names.Add(totals[i].Name);
-                paidOut.Add(totals[i].Total);
-            }            
+                for (int i = 0; i < totals.Count; i++)
+                {
+                    names.Add(totals[i].Name);
+                    paidOut.Add(totals[i].Total);
+                }
 
-            for (int i = 0; i < paidOut.Count; i++)
+                for (int i = 0; i < paidOut.Count; i++)
+                {
+                    if (paidOut[i] < eachOwes)
+                    {
+                        totals[i].Owes = true;
+                        totals[i].AmountOwes = eachOwes - paidOut[i];
+                    }
+                    else if (paidOut[i] > eachOwes)
+                    {
+                        totals[i].IsOwed = true;
+                        totals[i].AmountOwed = paidOut[i] - eachOwes;
+                    }
+                }
+            }
+            catch (Exception ex)
             {
-                if (paidOut[i] < eachOwes)
+                Debug.Print(string.Format("Error calculating who owes. {0}", ex));
+            }
+
+            return totals;
+        }
+
+        public static List<TravelerTotals> AssignTotals(List<string> cleanTravelers)
+        {
+            List<TravelerTotals> totals = new List<TravelerTotals>(cleanTravelers.Count / 5);
+
+            int skipValue = 0;
+
+            try
+            {
+                for (int i = 0; i < cleanTravelers.Count / 5; i++)
                 {
-                    totals[i].Owes = true;
-                    totals[i].AmountOwes = eachOwes - paidOut[i];
+                    totals.Add(new TravelerTotals());
+
+                    totals[i].Name = cleanTravelers[i + skipValue];
+
+                    totals[i].Total = Convert.ToDouble(cleanTravelers[1 + i + skipValue]) +
+                        Convert.ToDouble(cleanTravelers[2 + i + skipValue]) +
+                        Convert.ToDouble(cleanTravelers[3 + i + skipValue]) +
+                        Convert.ToDouble(cleanTravelers[4 + i + skipValue]);
+
+                    skipValue += 4;
                 }
-                else if (paidOut[i] > eachOwes)
-                {
-                    totals[i].IsOwed = true;
-                    totals[i].AmountOwed = paidOut[i] - eachOwes;
-                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(string.Format("Error assigning totals. {0}", ex));
             }
 
             return totals;
@@ -89,6 +126,30 @@ namespace BWQ.TripCalculator.Service
             }
 
             return travelerList;
+        }
+    }
+
+    public class CleanseData
+    {
+        public static List<string> CleanData(List<string> currentTravelers)
+        {
+            List<string> cleanTravelers = new List<string>();
+            char delimiter = ':';
+
+            try
+            {
+                foreach (string dirtyString in currentTravelers)
+                {
+                    string[] split = dirtyString.Split(delimiter);
+                    cleanTravelers.Add(split[1]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(string.Format("Error cleansing data. {0}", ex));
+            }
+
+            return cleanTravelers;
         }
     }
 }

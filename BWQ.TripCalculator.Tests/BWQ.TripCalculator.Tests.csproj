@@ -76,9 +76,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BWQ.TripCalculator.Models\BWQ.TripCalculator.Models.csproj">
+      <Project>{fcc24aad-cca5-4170-8235-db0a9194bdb2}</Project>
+      <Name>BWQ.TripCalculator.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BWQ.TripCalculator.Service\BWQ.TripCalculator.Service.csproj">
       <Project>{2b20d439-a295-48e5-9380-fb67de71ee62}</Project>
       <Name>BWQ.TripCalculator.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWQ.TripCalculator\BWQ.TripCalculator.UI.csproj">
+      <Project>{0cf46e57-6673-43db-b043-69e175383ea4}</Project>
+      <Name>BWQ.TripCalculator.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
