@@ -13,8 +13,8 @@ namespace BWQ.TripCalculator
     public partial class StudentExpenses : System.Web.UI.Page
     {
         int numUses;
-        Regex nameValidation = new Regex(@"[A-Za-z. ]+$");
-        Regex numericValidation = new Regex(@"[0-9. ]+$");
+        Regex nameValidation = new Regex(@"^[A-Za-z. ]+$");
+        Regex numericValidation = new Regex(@"^[0-9.]+$");
         StudentTraveler currentTraveler = new StudentTraveler();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -40,6 +40,12 @@ namespace BWQ.TripCalculator
 
             if (lblNumericError.Visible)
                 lblNumericError.Visible = false;
+
+            if (lblNumUsesError.Visible)
+                lblNumUsesError.Visible = false;
+
+            if (lblSuccess.Visible)
+                lblSuccess.Visible = false;
         }
 
         private void ClearForm()
