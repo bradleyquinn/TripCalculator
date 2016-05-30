@@ -10,9 +10,36 @@ namespace BWQ.TripCalculator.Service
 {
     public class CalculationService
     {
-        public NotImplementedException CalculateTotals()
+        public static List<TravelerTotals> CalculateTotals(List<TravelerTotals> totals)
         {
-            return new NotImplementedException();
+            double tripTotal = totals.Sum(x => x.Total);
+            double eachOwes = tripTotal / totals.Count;
+            List<TravelerTotals> owingTravelers = DetermineWhoOwes(totals, tripTotal, eachOwes);
+
+            return owingTravelers;
+        }
+
+        private static List<TravelerTotals> DetermineWhoOwes(List<TravelerTotals> totals, double tripTotal, double eachOwes)
+        {
+            List<string> names = new List<string>(totals.Count);
+            List<double> paidOut = new List<double>(totals.Count);
+
+            for (int i = 0; i < totals.Count; i++)
+            {
+                names.Add(totals[i].Name);
+                paidOut.Add(totals[i].Total);
+            }            
+
+            for (int i = 0; i < paidOut.Count; i++)
+            {
+                if (paidOut[i] < eachOwes)
+                {
+                    totals[i].Owes = true;
+                    totals[i].AmountOwes = eachOwes - paidOut[i];
+                }
+            }
+
+            return totals;
         }
     }
 
@@ -37,14 +64,13 @@ namespace BWQ.TripCalculator.Service
 
     public class RetrieveData
     {
-        //return list of strings we know there are 5 values per traveler
         public static List<string> RetrieveSessionVariables()
         {
             List<string> travelerList = new List<string>();
 
             try
             {
-                foreach(string sessionTraveler in HttpContext.Current.Session.Keys)
+                foreach (string sessionTraveler in HttpContext.Current.Session.Keys)
                 {
                     if (!sessionTraveler.Contains("numUses"))
                     {

@@ -13,16 +13,11 @@ namespace BWQ.TripCalculator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            StudentTraveler traveler = new StudentTraveler();
-
             List<string> currentTravelers = RetrieveSession();
-
             List<string> cleanTravelers = CleanData(currentTravelers);
-
             List<TravelerTotals> totals = AssignTotals(cleanTravelers);
+            List<TravelerTotals> owingTravelers = CalculationService.CalculateTotals(totals);
 
-            traveler = AssignObjectVariables(cleanTravelers, traveler);
 
         }
 
@@ -68,17 +63,6 @@ namespace BWQ.TripCalculator
             }
 
             return totals;
-        }
-
-        private StudentTraveler AssignObjectVariables(List<string> cleanTravelers, StudentTraveler traveler)
-        {
-            traveler.Name = cleanTravelers[0];
-            traveler.FuelFlight = Convert.ToDouble(cleanTravelers[1]);
-            traveler.FoodDrink = Convert.ToDouble(cleanTravelers[2]);
-            traveler.Lodging = Convert.ToDouble(cleanTravelers[3]);
-            traveler.Activites = Convert.ToDouble(cleanTravelers[4]);
-
-            return traveler;
         }
     }
 }
